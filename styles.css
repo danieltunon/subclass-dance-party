@@ -3,13 +3,14 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background: url(src/ocean.jpg);
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .dancerButton, .lineUpButton {
   padding:5px 12px;
   float:right;
 }
@@ -20,8 +21,37 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
+.blinky-dancer{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+/*using content atrribute without pseudo-selecctor before, after?*/
+.star-dancer{
+  content: url(src/star.png);
+  position:absolute;
+  height: 120px;
+  width: 120px;
+  animation: spinstar 5s infinite;
+}
+
+@keyframes spinstar {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(80deg); }
+  50% { transform: rotate(-180deg); }
+  90% { transform: rotate(460deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.spongeBobDancer {
+  content: url(src/sb1.gif);
+  height: 118px;
+  width: 200px;
+  position: absolute;
+}
+.spongeBobDancer:after {
+  content: url(src/bubbles.gif);
+  width: 130px;
+  height: 200px;
 }
